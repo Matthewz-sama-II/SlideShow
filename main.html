@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Implementação da IA na Medicina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="apresentacao" id="apresentacao">
+
+    <!-- 1. CAPA -->
+    <section class="slide capa" data-titulo="Início">
+      <div class="conteudo centro">
+        <p class="etiqueta anim" style="--i:0">Seminário</p>
+        <h1 class="anim" style="--i:1">A Implementação da <span class="destaque">Inteligência Artificial</span> na Medicina</h1>
+        <p class="subtitulo anim" style="--i:2">Do dobramento de proteínas à categorização de sintomas</p>
+        <p class="dica anim" style="--i:3">Use as setas do teclado, clique na linha do tempo abaixo ou deslize na tela</p>
+      </div>
+    </section>
+
+    <!-- 2. O QUE É -->
+    <section class="slide" data-titulo="Conceitos">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Introdução</p>
+        <h2 class="anim" style="--i:1">O que é IA na medicina?</h2>
+        <p class="texto anim" style="--i:2">Sistemas que aprendem padrões em grandes volumes de dados de saúde para apoiar pesquisadores e profissionais em tarefas que exigem análise complexa.</p>
+        <div class="grade tres">
+          <article class="cartao anim" style="--i:3">
+            <h3>Machine Learning</h3>
+            <p>Algoritmos que aprendem a partir de exemplos, como exames e históricos clínicos.</p>
+          </article>
+          <article class="cartao anim" style="--i:4">
+            <h3>Deep Learning</h3>
+            <p>Redes neurais profundas, muito eficazes em imagens, sinais e estruturas moleculares.</p>
+          </article>
+          <article class="cartao anim" style="--i:5">
+            <h3>Modelos de linguagem</h3>
+            <p>Interpretam texto livre, como relatos de pacientes e prontuários.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HISTÓRICO -->
+    <section class="slide" data-titulo="Histórico">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Contexto histórico</p>
+        <h2 class="anim" style="--i:1">Marcos da IA na medicina</h2>
+        <div class="grade marcos">
+          <article class="marco anim" style="--i:2">
+            <span class="ano">Anos 1970</span>
+            <p><strong>MYCIN:</strong> sistema especialista criado em Stanford para apoiar a escolha de antibióticos.</p>
+          </article>
+          <article class="marco anim" style="--i:3">
+            <span class="ano">2012</span>
+            <p><strong>Deep learning</strong> ganha força no reconhecimento de imagens, abrindo caminho para a análise de exames.</p>
+          </article>
+          <article class="marco anim" style="--i:4">
+            <span class="ano">2018</span>
+            <p><strong>IDx-DR:</strong> o FDA autoriza o primeiro sistema de diagnóstico autônomo por IA, para retinopatia diabética.</p>
+          </article>
+          <article class="marco anim" style="--i:5">
+            <span class="ano">2020</span>
+            <p><strong>AlphaFold 2</strong> atinge precisão comparável a métodos experimentais no desafio CASP14.</p>
+          </article>
+          <article class="marco anim" style="--i:6">
+            <span class="ano">2022</span>
+            <p>Base de dados do AlphaFold passa de <strong>200 milhões</strong> de estruturas; modelos de linguagem chegam ao grande público.</p>
+          </article>
+          <article class="marco anim" style="--i:7">
+            <span class="ano">2024</span>
+            <p><strong>Nobel de Química</strong> reconhece a predição e o design computacional de proteínas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROBLEMA DO DOBRAMENTO -->
+    <section class="slide" data-titulo="Proteínas">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Estudo de caso 1</p>
+        <h2 class="anim" style="--i:1">O problema do dobramento de proteínas</h2>
+        <p class="texto anim" style="--i:2">A função de uma proteína depende da sua forma tridimensional, e essa forma é determinada pela sequência de aminoácidos. Prever a forma a partir da sequência foi, por cerca de 50 anos, um dos grandes desafios da biologia.</p>
+        <div class="fluxo anim" style="--i:3">
+          <div class="etapa">Sequência de<br>aminoácidos</div>
+          <div class="seta">&rarr;</div>
+          <div class="etapa">Dobramento<br>(<em>folding</em>)</div>
+          <div class="seta">&rarr;</div>
+          <div class="etapa">Estrutura 3D<br>e função</div>
+        </div>
+        <p class="nota anim" style="--i:4">Métodos experimentais (cristalografia de raios X, crio-microscopia eletrônica) funcionam, mas são lentos e caros. Ideia central: a IA pode prever a estrutura em horas.</p>
+      </div>
+    </section>
+
+    <!-- 5. NOBEL / ALPHAFOLD -->
+    <section class="slide" data-titulo="Nobel 2024">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Prêmio Nobel de Química 2024</p>
+        <h2 class="anim" style="--i:1">AlphaFold: prever a estrutura de proteínas</h2>
+        <div class="grade tres">
+          <article class="cartao anim" style="--i:2">
+            <h3>Demis Hassabis</h3>
+            <p>Google DeepMind. Um dos responsáveis pelo desenvolvimento do AlphaFold.</p>
+          </article>
+          <article class="cartao anim" style="--i:3">
+            <h3>John Jumper</h3>
+            <p>Google DeepMind. Pesquisador que liderou o AlphaFold 2 junto a Hassabis.</p>
+          </article>
+          <article class="cartao anim" style="--i:4">
+            <h3>David Baker</h3>
+            <p>Universidade de Washington. Premiado pelo design computacional de proteínas (próximo slide).</p>
+          </article>
+        </div>
+        <div class="numeros anim" style="--i:5">
+          <div><strong data-contar="200">0</strong><span>milhões de estruturas previstas</span></div>
+          <div><strong data-contar="2">0</strong><span>milhões+ de usuários em 190 países</span></div>
+          <div><strong data-contar="2020">0</strong><span>ano do salto no CASP14</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DESIGN DE PROTEÍNAS -->
+    <section class="slide" data-titulo="Design">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Estudo de caso 2</p>
+        <h2 class="anim" style="--i:1">David Baker: criando proteínas que não existem na natureza</h2>
+        <p class="texto anim" style="--i:2">Enquanto o AlphaFold responde &ldquo;qual é a forma desta proteína?&rdquo;, o trabalho de Baker responde &ldquo;que sequência produz a forma e a função que eu quero?&rdquo;.</p>
+        <div class="grade dois">
+          <article class="cartao anim" style="--i:3">
+            <h3>Predição</h3>
+            <p>Sequência conhecida, estrutura desconhecida. Foco do AlphaFold.</p>
+          </article>
+          <article class="cartao anim" style="--i:4">
+            <h3>Design</h3>
+            <p>Função desejada, sequência a inventar. Foco do grupo de Baker, com software como o Rosetta.</p>
+          </article>
+        </div>
+        <p class="nota anim" style="--i:5">Aplicações possíveis: novos fármacos, enzimas, vacinas e sensores moleculares.</p>
+      </div>
+    </section>
+
+    <!-- 7. IMAGEM -->
+    <section class="slide" data-titulo="Imagens">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Estudo de caso 3</p>
+        <h2 class="anim" style="--i:1">IA no diagnóstico por imagem</h2>
+        <div class="grade tres">
+          <article class="cartao anim" style="--i:2">
+            <h3>Radiologia</h3>
+            <p>Apoio à detecção de nódulos, fraturas e alterações em tomografias e radiografias.</p>
+          </article>
+          <article class="cartao anim" style="--i:3">
+            <h3>Oftalmologia</h3>
+            <p>Triagem de retinopatia diabética por imagem da retina, caso do IDx-DR.</p>
+          </article>
+          <article class="cartao anim" style="--i:4">
+            <h3>Patologia</h3>
+            <p>Análise de lâminas digitalizadas para apoiar a identificação de células alteradas.</p>
+          </article>
+        </div>
+        <p class="nota anim" style="--i:5">O resultado funciona como segunda opinião: a decisão final continua com o profissional de saúde.</p>
+      </div>
+    </section>
+
+    <!-- 8. SINTOMAS -->
+    <section class="slide" data-titulo="Sintomas">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Estudo de caso 4</p>
+        <h2 class="anim" style="--i:1">Identificação e categorização de sintomas</h2>
+        <p class="texto anim" style="--i:2">Modelos de linguagem e processamento de linguagem natural transformam relatos em texto livre em informação organizada.</p>
+        <div class="fluxo quatro anim" style="--i:3">
+          <div class="etapa">Relato do<br>paciente</div>
+          <div class="seta">&rarr;</div>
+          <div class="etapa">Extração de<br>sintomas</div>
+          <div class="seta">&rarr;</div>
+          <div class="etapa">Categorização e<br>nível de urgência</div>
+          <div class="seta">&rarr;</div>
+          <div class="etapa">Encaminhamento<br>ao profissional</div>
+        </div>
+        <p class="nota anim" style="--i:4">Usos: triagem em pronto atendimento, organização de prontuários e apoio à codificação de diagnósticos (CID). É apoio à decisão, não diagnóstico.</p>
+      </div>
+    </section>
+
+    <!-- 9. DESAFIOS -->
+    <section class="slide" data-titulo="Desafios">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Dificuldades</p>
+        <h2 class="anim" style="--i:1">Desafios da implementação</h2>
+        <div class="grade tres compacto">
+          <article class="cartao anim" style="--i:2">
+            <h3>Tecnologia recente</h3>
+            <p>Evolução rápida, poucos estudos de longo prazo e protocolos ainda em construção.</p>
+          </article>
+          <article class="cartao anim" style="--i:3">
+            <h3>Dados e privacidade</h3>
+            <p>Dados de saúde são sensíveis e protegidos pela LGPD.</p>
+          </article>
+          <article class="cartao anim" style="--i:4">
+            <h3>Vieses</h3>
+            <p>Modelos treinados com dados pouco diversos podem errar mais em certos grupos.</p>
+          </article>
+          <article class="cartao anim" style="--i:5">
+            <h3>Explicabilidade</h3>
+            <p>Nem sempre é possível justificar por que o modelo chegou a um resultado.</p>
+          </article>
+          <article class="cartao anim" style="--i:6">
+            <h3>Regulação</h3>
+            <p>Softwares de saúde precisam de validação e acompanhamento de órgãos como a Anvisa.</p>
+          </article>
+          <article class="cartao anim" style="--i:7">
+            <h3>Erros em sintomas</h3>
+            <p>Na categorização, respostas incorretas ou inventadas podem atrasar um atendimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSÃO -->
+    <section class="slide" data-titulo="Conclusão">
+      <div class="conteudo">
+        <p class="etiqueta anim" style="--i:0">Conclusão</p>
+        <h2 class="anim" style="--i:1">O futuro: IA como parceira dos profissionais de saúde</h2>
+        <ul class="lista anim" style="--i:2">
+          <li>A IA já acelera a descoberta científica, como mostrou o Nobel de 2024.</li>
+          <li>No cuidado ao paciente, atua como apoio, e a decisão permanece humana.</li>
+          <li>O avanço depende de dados de qualidade, regulação clara e transparência.</li>
+        </ul>
+        <p class="referencias anim" style="--i:3">Fontes para consulta: nobelprize.org (Nobel de Química 2024), FDA (autorização do IDx-DR, 2018), Anvisa (software como dispositivo médico), Lei nº 13.709/2018 (LGPD).</p>
+        <p class="agradecimento anim" style="--i:4">Obrigado!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LINHA DO TEMPO / NAVEGAÇÃO -->
+  <footer class="rodape">
+    <div class="timeline" aria-label="Linha do tempo da apresentação">
+      <div class="trilha" id="trilha">
+        <div class="preenchimento" id="preenchimento"></div>
+      </div>
+    </div>
+    <div class="controles">
+      <button type="button" id="anterior" aria-label="Slide anterior">&larr;</button>
+      <span id="contador">1 / 10</span>
+      <button type="button" id="proximo" aria-label="Próximo slide">&rarr;</button>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

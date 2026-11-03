@@ -1,0 +1,316 @@
+/* ===== Variáveis e base ===== */
+:root {
+  --bg: #0b1620;
+  --bg-2: #112231;
+  --cartao: #152a3b;
+  --primario: #2dd4bf;
+  --secundario: #60a5fa;
+  --texto: #e6f1f5;
+  --suave: #9db4c0;
+  --borda: #24415a;
+  --altura-rodape: 110px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Área dos slides ===== */
+.apresentacao {
+  position: fixed;
+  inset: 0 0 var(--altura-rodape) 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.10), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(96, 165, 250, 0.10), transparent 45%),
+    var(--bg);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 56px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  overflow-y: auto;
+}
+
+.slide.passado { transform: translateX(-40px); }
+
+.slide.ativo {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.conteudo {
+  width: min(1000px, 100%);
+  margin: auto;
+}
+
+.conteudo.centro { text-align: center; }
+
+/* ===== Tipografia ===== */
+h1 {
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  line-height: 1.15;
+  margin: 12px 0 18px;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.8vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--primario);
+  margin-bottom: 8px;
+}
+
+.destaque { color: var(--primario); }
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secundario);
+  margin-bottom: 8px;
+}
+
+.subtitulo { font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--suave); }
+.texto { font-size: clamp(1rem, 1.9vw, 1.25rem); line-height: 1.6; color: var(--texto); margin-bottom: 22px; }
+.nota { margin-top: 22px; color: var(--suave); font-size: clamp(0.95rem, 1.6vw, 1.1rem); line-height: 1.5; border-left: 3px solid var(--primario); padding-left: 14px; }
+.dica { margin-top: 40px; font-size: 0.9rem; color: var(--suave); }
+
+/* ===== Animações ===== */
+.slide.ativo .anim {
+  animation: subir 0.7s ease both;
+  animation-delay: calc(var(--i, 0) * 120ms + 150ms);
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Capa: círculos flutuantes decorativos */
+.capa::before, .capa::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: flutuar 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.capa::before { width: 320px; height: 320px; background: var(--primario); top: 8%; left: 6%; }
+.capa::after  { width: 380px; height: 380px; background: var(--secundario); bottom: 4%; right: 6%; animation-delay: -4s; }
+
+@keyframes flutuar {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, -24px) scale(1.12); }
+}
+
+/* ===== Cartões e grades ===== */
+.grade { display: grid; gap: 16px; margin-top: 8px; }
+.grade.dois { grid-template-columns: repeat(2, 1fr); }
+.grade.tres { grid-template-columns: repeat(3, 1fr); }
+.grade.marcos { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+
+.cartao, .marco {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.cartao p, .marco p { color: var(--suave); line-height: 1.5; font-size: clamp(0.92rem, 1.5vw, 1.02rem); }
+.marco p strong { color: var(--texto); }
+
+.ano {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--primario);
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* ===== Fluxos ===== */
+.fluxo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.etapa {
+  background: var(--cartao);
+  border: 1px solid var(--primario);
+  border-radius: 12px;
+  padding: 16px 22px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.seta { font-size: 1.8rem; color: var(--primario); }
+
+/* ===== Números ===== */
+.numeros {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.numeros div {
+  flex: 1 1 180px;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.numeros strong { display: block; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--primario); }
+.numeros span { color: var(--suave); font-size: 0.92rem; }
+
+/* ===== Lista e conclusão ===== */
+.lista { list-style: none; margin: 8px 0 22px; }
+.lista li {
+  position: relative;
+  padding: 12px 0 12px 32px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--borda);
+}
+.lista li::before {
+  content: "";
+  position: absolute;
+  left: 4px; top: 21px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--primario);
+}
+
+.referencias { font-size: 0.85rem; color: var(--suave); line-height: 1.5; }
+.agradecimento { margin-top: 18px; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--primario); }
+
+/* ===== Rodapé: timeline ===== */
+.rodape {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--altura-rodape);
+  background: var(--bg-2);
+  border-top: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 clamp(16px, 4vw, 48px);
+}
+
+.timeline { flex: 1; padding: 0 clamp(14px, 3vw, 40px); }
+
+.trilha {
+  position: relative;
+  height: 4px;
+  background: var(--borda);
+  border-radius: 4px;
+}
+
+.preenchimento {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: linear-gradient(90deg, var(--primario), var(--secundario));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.no {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--suave);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ponto {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 3px solid var(--borda);
+  transition: all 0.3s ease;
+}
+
+.rotulo {
+  position: absolute;
+  top: 24px;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  transition: color 0.3s ease;
+}
+
+.no.feito .ponto { border-color: var(--primario); }
+.no.ativo .ponto { background: var(--primario); border-color: var(--primario); transform: scale(1.35); box-shadow: 0 0 0 6px rgba(45, 212, 191, 0.2); }
+.no.ativo .rotulo { color: var(--texto); font-weight: 600; }
+.no:hover .ponto { border-color: var(--secundario); }
+.no:focus-visible { outline: 2px solid var(--secundario); outline-offset: 6px; border-radius: 6px; }
+
+.controles { display: flex; align-items: center; gap: 12px; color: var(--suave); font-size: 0.95rem; }
+
+.controles button {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--borda);
+  background: var(--cartao);
+  color: var(--texto);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.controles button:hover { background: var(--primario); color: var(--bg); }
+
+/* ===== Responsivo ===== */
+@media (max-width: 800px) {
+  :root { --altura-rodape: 100px; }
+  .grade.tres, .grade.marcos { grid-template-columns: 1fr 1fr; }
+  .rotulo { display: none; }
+  .no.ativo .rotulo { display: block; }
+  .rodape { gap: 10px; }
+}
+
+@media (max-width: 520px) {
+  .grade.tres, .grade.dois, .grade.marcos { grid-template-columns: 1fr; }
+  .seta { transform: rotate(90deg); }
+  .controles #contador { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .preenchimento, .ponto { transition: none; }
+  .slide.ativo .anim, .capa::before, .capa::after { animation: none; }
+}
